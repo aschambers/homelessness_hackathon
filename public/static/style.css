@@ -35,10 +35,17 @@ body{
 	background-color:#F0F2EF;
 }*/
 
+#center-top {
+	font-size:50px;
+	margin-left: 35px;
+	background-color: #78E0DC;
+	padding-left:320px;
+	padding-right:320px;
+}
 .header{
 	font-size:50px;
 	background-color: #78E0DC;
-	text-align: center;
+	margin: 0 0 0 100px;
 	color:black;
 }
 
@@ -176,6 +183,14 @@ label{
 	display: inline-block;
 	width:500px;
 	text-align: center;
+}
+
+.sign-up{
+	margin-bottom:45px;
+}
+
+.button1{
+	margin-bottom:10px;
 }
 
 .button2{
