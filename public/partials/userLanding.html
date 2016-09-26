@@ -1,0 +1,35 @@
+<div id = 'user'>
+	<div class='header'>
+		<h1>Opportunity Works</h1>
+	</div>
+	<a ng-click='logout()'>Logout</a>
+	<h2>Welcome {{user.username}}</h2>
+	<button ng-click = "resume()">See Resume For Past Jobs</button>
+
+	<div id = 'currentJob' ng-if = 'current'>
+		<h4 class='bold'>Current Job Taken</h4>
+		<h4>{{currentJob.title}}</h4>
+		<p>Address: {{currentJob.street}} {{currentJob.city}}, {{currentJob.zipcode}}
+		<p class = 'descript'>{{currentJob.description}}</p>
+	</div>
+
+	<div id = 'allJobs'>
+		<h2>All available jobs in {{user.city}}</h2>
+
+		<div ng-repeat = "job in jobs" class='avail_jobs'>
+			<h2>Title: {{job.title}}</h2>
+			<p>Created at: {{job.createdAt | date: 'MMMM dd, yyyy'}}</p>
+			<p>Address: {{job.street}} {{job.city}}, {{job.zipcode}}</p>
+			<p>Description: {{job.description}}</p>
+			<div ng-if="current=false">
+			<button ng-click = "job.accept = true">Accept Job</button>
+			<div ng-show = "job.accept">
+				<p>Employer: {{job._employer.name}}</p>
+				<p>Email: {{job._employer.email}}</p>
+				<button ng-click = "confirmJob(job)">Confirm</button>
+				<button ng-click = "job.accept = false">Reject</button>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>

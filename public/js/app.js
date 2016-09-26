@@ -8,14 +8,25 @@ myApp.config(function($routeProvider){
 			: 'partials/busLogin.html'
 		})
 		.when('/userLanding', {
-			controller: 'userController'
+			controller: 'userLandingController',
 			templateUrl
 			: 'partials/userLanding.html'
 		})
-		.when('/busLanding', {
-			controller: 'busController'
-			templateUrl
-			: 'partials/busLanding.html'
+		// .when('/busLanding', {
+		// 	controller: 'busController',
+		// 	templateUrl
+		// 	: 'partials/busLanding.html'
+		// })
+		.when('/business', {
+			controller: 'businessController',
+			templateUrl: 'partials/business.html'
+		})
+		// .when('/home', {
+		// 	templateUrl: 'partials/example.html'
+		// })
+		.when('/resume', {
+			controller: 'resumeController',
+			templateUrl: 'partials/resume.html'
 		})
 		.otherwise({
 			redirectTo: '/'
